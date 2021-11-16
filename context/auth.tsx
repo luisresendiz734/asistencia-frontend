@@ -1,30 +1,11 @@
 import { FC, useContext, createContext, useState } from "react";
 
 export interface IUser {
-  profile: string;
-  firstName: string;
-  lastName: string;
-  civilState: string;
-  age: number;
-  children: string;
-  house: number;
-  phone: string;
+  fullName: string;
+  username: string;
   email: string;
   password: string;
-  curp: string;
-  rfc: string;
-  nss: string;
-  birthDate: string;
-  birthPlace: string;
-  address: string;
-  nationality: string;
-  education: string;
-  profesion: string;
-  position: string;
-  department: string;
-  salary: number;
-  schedule: string;
-  directBoss: string;
+  userType: string;
 }
 
 interface IAuth {
@@ -45,7 +26,7 @@ const AuthProvider: FC = ({ children }) => {
   const [user, setUser] = useState<IUser | null>(null);
 
   const register = async (user: IUser) => {
-    const REGISTER_URL = "http://localhost:4000/auth/register";
+    const REGISTER_URL = "http://localhost:4000/users/register";
 
     try {
       const res = await fetch(REGISTER_URL, {
@@ -62,7 +43,7 @@ const AuthProvider: FC = ({ children }) => {
     } catch (error) {}
   };
   const login = async (email: string, password: string) => {
-    const LOGIN_URL = "http://localhost:4000/auth/login";
+    const LOGIN_URL = "http://localhost:4000/users/login";
 
     try {
       const res = await fetch(LOGIN_URL, {
