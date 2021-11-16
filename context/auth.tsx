@@ -26,7 +26,7 @@ const AuthProvider: FC = ({ children }) => {
   const [user, setUser] = useState<IUser | null>(null);
 
   const register = async (user: IUser) => {
-    const REGISTER_URL = "http://localhost:4000/users/register";
+    const REGISTER_URL = "http://localhost:4000/workers/register";
 
     try {
       const res = await fetch(REGISTER_URL, {
@@ -63,7 +63,7 @@ const AuthProvider: FC = ({ children }) => {
     }
   };
   const logout = async () => {
-    const LOGOUT_URL = "http://localhost:4000/auth/logout";
+    const LOGOUT_URL = "http://localhost:4000/users/logout";
 
     try {
       const res = await fetch(LOGOUT_URL, {

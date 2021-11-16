@@ -36,7 +36,7 @@ const PersonalExplorer = () => {
 
   useEffect(() => {
     const getAllUsers = async () => {
-      const USERS_URL = "http://localhost:4000/users";
+      const USERS_URL = "http://localhost:4000/workers";
       try {
         const res = await fetch(USERS_URL);
         const data = await res.json();
@@ -54,7 +54,7 @@ const PersonalExplorer = () => {
           <h2 className="text-4xl my-12">Explorador de personal</h2>
           <Link href="/rh/personal/register">
             <a className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Registrar nuevo usuario
+              Registrar nuevo trabajador
             </a>
           </Link>
           <div className="my-8 w-full">
@@ -82,7 +82,7 @@ const PersonalExplorer = () => {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {users.length > 0 &&
+                {users?.length > 0 &&
                   users.map((u) => (
                     <tr key={u.id}>
                       <td className="px-6 py-4 whitespace-nowrap">{u.id}</td>

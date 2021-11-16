@@ -63,7 +63,7 @@ const Register = () => {
       directBoss,
     };
 
-    const REGISTER_URL = "http://localhost:4000/users/register";
+    const REGISTER_URL = "http://localhost:4000/workers/register";
 
     try {
       const res = await fetch(REGISTER_URL, {
